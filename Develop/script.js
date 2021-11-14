@@ -14,7 +14,7 @@ function choose() {
   numbers = confirm("Do you want to include numbers?");
   specialCharacters = confirm("Do you want to include special characters?");
   if (!lowercase && !uppercase && !numbers && !specialCharacters) {
-    alert("Please select at least one character type.");
+    alert("Please select a feature.");
     criteria();
 } else {
     passlength();
@@ -22,7 +22,7 @@ function choose() {
 }
 function passlength() {
 passlength = prompt("The password must be between 8 and 128 characters in length");
-if (passwordLength > 128 || passwordLength < 8) {
+if (passlength > 128 || passlength < 8) {
   alert("Please enter a number between 8 and 128")
   passlength();
 } else {
@@ -46,7 +46,11 @@ let Array = specialCharacters.concat(uppercase, lowercase, numbers);
 
 
 
-
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
 // var tagName = prompt("Please enter an HTML Tag (ex. h1, h2, p, div):", "enter tag");
 
