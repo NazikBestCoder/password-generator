@@ -7,8 +7,8 @@ var specialCharacters;
 var passwordLength;
 
 // generate prompt qs
-generateBtn.addEventListener("click", prompt);
-function prompt() {
+generateBtn.addEventListener("click", choose);
+function choose() {
   lowercase = confirm("Do you want to include lowercase letters?");
   uppercase = confirm("Do you want to include uppercase letters?");
   numbers = confirm("Do you want to include numbers?");
@@ -17,10 +17,17 @@ function prompt() {
     alert("Please select at least one character type.");
     criteria();
 } else {
-    length();
+    passlength();
 }
 }
-function length() {
+function passlength() {
+passlength = prompt("The password must be between 8 and 128 characters in length");
+if (passwordLength > 128 || passwordLength < 8) {
+  alert("Please enter a number between 8 and 128")
+  passlength();
+} else {
+  generatePassword();
+}
 
 }
 
